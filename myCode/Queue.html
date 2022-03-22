@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Queue() {
+            this.items = [];
+
+            Queue.prototype.enqueue = function(element) {
+                this.items.push(element)
+            }
+
+            Queue.prototype.dequeue = function() {
+                this.items.shift();
+            }
+
+            Queue.prototype.front = function() {
+                return this.items[0]
+            }
+
+            Queue.prototype.isEmpty = function() {
+                return !this.items.length
+            }
+
+            Queue.prototype.size = function() {
+                return this.items.length;
+            }
+        }
+
+        let q = new Queue();
+        q.enqueue(1)
+        q.enqueue(2)
+        q.enqueue(3)
+        q.enqueue(4)
+        console.log(q.size());
+        console.log(q.isEmpty());
+    </script>
+</body>
+</html>
